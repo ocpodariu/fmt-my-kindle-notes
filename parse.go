@@ -213,9 +213,8 @@ func findFirstNodeByClass(n *html.Node, className string) *html.Node {
 		}
 	}
 	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		x := findFirstNodeByClass(c, className)
-		if x != nil {
-			return x
+		if nc := findFirstNodeByClass(c, className); nc != nil {
+			return nc
 		}
 	}
 
